@@ -1,0 +1,49 @@
+<CalculatorLayout>:
+    orientation: 'vertical'
+
+    Label:
+        text: 'Calculadora de Hipoteca Inversa'
+        font_size: '20sp'
+        size_hint_y: None
+        height: self.texture_size[1]
+
+    Label:
+        text: 'Monto Total:'
+    TextInput:
+        id: total_amount_input
+        hint_text: 'Ingrese el monto total de la hipoteca'
+
+    Label:
+        text: 'Edad:'
+    TextInput:
+        id: age_input
+        hint_text: 'Ingrese su edad'
+
+    Label:
+        text: 'Esperanza de Vida:'
+    TextInput:
+        id: life_expectancy_input
+        hint_text: 'Ingrese su esperanza de vida'
+
+    Label:
+        text: 'Período de Pago:'
+    TextInput:
+        id: payment_period_input
+        hint_text: 'Ingrese el período de pago'
+
+    Label:
+        text: 'Porcentaje de Propiedad:'
+    TextInput:
+        id: property_percentage_input
+        hint_text: 'Ingrese el porcentaje de propiedad'
+
+    Label:
+        text: 'Tipo de Hipoteca:'
+    Spinner:
+        id: mortgage_type_spinner
+        text: 'Seleccione el tipo de hipoteca'
+        values: ['Hipoteca vitalicia', 'Hipoteca parcial', 'Hipoteca total']
+
+    Button:
+        text: 'Calcular'
+        on_press: root.calculate()
