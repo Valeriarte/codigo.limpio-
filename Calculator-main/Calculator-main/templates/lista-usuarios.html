@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <title>Lista de Usuarios</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f7f7f7;
+            color: #333;
+            margin: 0;
+            padding: 20px;
+        }
+        .container {
+            max-width: 800px;
+            margin: auto;
+            background: white;
+            padding: 20px;
+            border-radius: 8px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+        }
+        h1 {
+            text-align: center;
+            color: #0056b3;
+        }
+        ul {
+            list-style-type: none;
+            padding: 0;
+        }
+        li {
+            background: #e9ecef;
+            margin: 8px 0;
+            padding: 10px;
+            border-radius: 4px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+        .user-info {
+            font-size: 16px;
+        }
+        .add-user {
+            display: inline-block;
+            margin-top: 20px;
+            padding: 10px 15px;
+            background-color: #0056b3;
+            color: white;
+            text-decoration: none;
+            border-radius: 4px;
+            text-align: center;
+        }
+        .add-user:hover {
+            background-color: #004494;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>Lista de Usuarios</h1>
+        {% if usuarios %}
+            <ul>
+                {% for usuario in usuarios %}
+                    <li>
+                        <span class="user-info">{{ usuario.name }} - {{ usuario.age }} años</span>
+                    </li>
+                {% endfor %}
+            </ul>
+        {% else %}
+            <p>No hay usuarios registrados.</p>
+        {% endif %}
+        <a href="/nuevo-usuario" class="add-user">Agregar Nuevo Usuario</a>
+    </div>
+</body>
+</html>
